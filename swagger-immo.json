@@ -1,0 +1,185 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Immo Notion",
+    "version": "1.0.0",
+    "description": "API pour gérer tes biens immobiliers via Notion"
+  },
+  "servers": [
+    {
+      "url": "https://api-flask-immo.onrender.com",
+      "description": "Serveur de production"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Ping API",
+        "responses": {
+          "200": {
+            "description": "API en ligne",
+            "content": {
+              "application/json": {
+                "schema": { "type": "object", "properties": { "message": { "type": "string" } } }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/immeubles": {
+      "get": {
+        "summary": "Liste des biens",
+        "responses": {
+          "200": {
+            "description": "Liste des immeubles (nom et page_id)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "nom": { "type": "string" },
+                      "page_id": { "type": "string" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/immeuble/{page_id}": {
+      "get": {
+        "summary": "Détail d’un bien",
+        "parameters": [
+          {
+            "name": "page_id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "Identifiant Notion de la fiche"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Propriétés brutes de la page Notion",
+            "content": {
+              "application/json": {
+                "schema": { "type": "object" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/attributs": {
+      "get": {
+        "summary": "Liste des attributs (colonnes)",
+        "responses": {
+          "200": {
+            "description": "Liste des propriétés Notion (nom, id, type)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "nom": { "type": "string" },
+                      "id": { "type": "string" },
+                      "type": { "type": "string" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/update-page/{page_id}": {
+      "patch": {
+        "summary": "Met à jour un ou plusieurs champs d’une fiche",
+        "parameters": [
+          {
+            "name": "page_id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "Identifiant de la page à mettre à jour"
+          }
+        ],
+        "requestBody": {
+          "description": "Données à mettre à jour (clé=nom de l'attribut, valeur selon type)",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "type": "object", "additionalProperties": {} }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Mise à jour réussie",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "boolean" },
+                    "page_id": { "type": "string" },
+                    "updated_fields": { "type": "array", "items": { "type": "string" } }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ajouter-attribut": {
+      "patch": {
+        "summary": "Ajoute un nouveau champ (attribut) à la base",
+        "requestBody": {
+          "description": "Spécifie le nom et type du nouvel attribut",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["nom"],
+                "properties": {
+                  "nom": { "type": "string" },
+                  "type": {
+                    "type": "string",
+                    "enum": ["rich_text", "number"]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Attribut ajouté avec succès",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "boolean" },
+                    "attribut": { "type": "string" },
+                    "type": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "immeubles": [
+    {
+      "nom": "26 Rue Mueller",
+      "page_id": "6fae6cb8-df5e-4474-9a9e-002bdb1d2218"
+    },
+    {
+      "nom": "Aristide Bruant",
+      "page_id": "4a1605c3-8274-4f43-8889-dc89d7ae9158"
+    },
+    {
+      "nom": "Béziers - Mercoran",
+      "page_id": "bccecb0e-a1f9-4057-9c98-3041c1c72b5f"
+    },
+    {
+      "nom": "Nancy - Kennedy",
+      "page_id": "ce60957c-fcea-4b12-95ab-6b3453c14fc0"
+    },
+    {
+      "nom": "Poitiers - Pineau",
+      "page_id": "f7dc5676-1a37-4b02-ba22-eb55a89bf5d9"
+    },
+    {
+      "nom": "Lille -Philadelphie",
+      "page_id": "4f9b9aee-1664-4685-84b8-4cbf0bfa3418"
+    },
+    {
+      "nom": "Nancy - Cure d’air - Rue de la Cote",
+      "page_id": "40a78f47-bd0e-44b7-99e6-4412e66fbac8"
+    },
+    {
+      "nom": "Marseille - Modeste",
+      "page_id": "19a2b941-20ac-4669-abee-7debba12c4fc"
+    },
+    {
+      "nom": "Marseille - Edouard Deiss",
+      "page_id": "ca6f2a9a-c7e8-4007-bcbf-5572cbb90cb6"
+    },
+    {
+      "nom": "Kremlin Bicêtre",
+      "page_id": "6a765b89-615a-4ca8-bc9e-1464e98a8540"
+    }
+  ],
+  "attributs": [
+    {
+      "id": "%3C%60%5C%3C",
+      "nom": "Nombre d'occupants",
+      "type": "number"
+    },
+    {
+      "id": "DSlm",
+      "nom": "Numéro Ademe",
+      "type": "rich_text"
+    },
+    {
+      "id": "EF_A",
+      "nom": "Assurance PNO",
+      "type": "select"
+    },
+    {
+      "id": "Ed%7B%7B",
+      "nom": "Banque",
+      "type": "select"
+    },
+    {
+      "id": "HRdW",
+      "nom": "Lien photo Drive",
+      "type": "url"
+    },
+    {
+      "id": "KNS%60",
+      "nom": "Date vente",
+      "type": "date"
+    },
+    {
+      "id": "Nxer",
+      "nom": "DPE",
+      "type": "select"
+    },
+    {
+      "id": "RTUU",
+      "nom": "Date de fin validité DPE ADEME",
+      "type": "date"
+    },
+    {
+      "id": "RXrF",
+      "nom": "Prix Achat",
+      "type": "number"
+    },
+    {
+      "id": "R%5BsU",
+      "nom": "Agence de gestion",
+      "type": "select"
+    },
+    {
+      "id": "RsRo",
+      "nom": "Netflix",
+      "type": "checkbox"
+    },
+    {
+      "id": "S%5EAN",
+      "nom": "Adresse",
+      "type": "rich_text"
+    },
+    {
+      "id": "V%40sZ",
+      "nom": "Lien lacartedescolocs",
+      "type": "url"
+    },
+    {
+      "id": "WjV%5C",
+      "nom": "Type",
+      "type": "select"
+    },
+    {
+      "id": "%5DxVh",
+      "nom": "Etage / Palier",
+      "type": "rich_text"
+    },
+    {
+      "id": "fUxJ",
+      "nom": "Nombre de chambres disponibles",
+      "type": "number"
+    },
+    {
+      "id": "nEXd",
+      "nom": "Mode de gestion",
+      "type": "select"
+    },
+    {
+      "id": "nY_o",
+      "nom": "Eau",
+      "type": "select"
+    },
+    {
+      "id": "orEr",
+      "nom": "Assurance habitation",
+      "type": "select"
+    },
+    {
+      "id": "s%3Aqg",
+      "nom": "Electricité",
+      "type": "select"
+    },
+    {
+      "id": "wSfu",
+      "nom": "Etat",
+      "type": "select"
+    },
+    {
+      "id": "xgT%3A",
+      "nom": "Superficie",
+      "type": "number"
+    },
+    {
+      "id": "zpxt",
+      "nom": "Internet",
+      "type": "select"
+    },
+    {
+      "id": "title",
+      "nom": "Nom",
+      "type": "title"
+    }
+  ]
+}

@@ -50,6 +50,18 @@ def get_immeuble(page_id):
         }, response.status_code
     return jsonify(response.json())
 
+@app.route('/immeuble/<page_id>/contenu')
+def get_page_blocks(page_id):
+    url = f"https://api.notion.com/v1/blocks/{page_id}/children"
+    response = requests.get(url, headers=HEADERS)
+    if response.status_code != 200:
+        return {
+            "error": "Impossible de récupérer le contenu de la page",
+            "status_code": response.status_code,
+            "response_text": response.text
+        }, response.status_code
+    return jsonify(response.json())
+
 @app.route('/attributs')
 def get_attributs():
     response = requests.get(NOTION_META_URL, headers=HEADERS)
