@@ -1,9 +1,10 @@
+import os
 from flask import Flask, jsonify, request
 import requests
 
 app = Flask(__name__)
 
-NOTION_TOKEN = "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"
+NOTION_TOKEN = os.environ.get("NOTION_TOKEN")
 DATABASE_ID = "19216fa0fcb24b1f97dc2c7e09514748"
 NOTION_URL = f"https://api.notion.com/v1/databases/{DATABASE_ID}/query"
 NOTION_META_URL = f"https://api.notion.com/v1/databases/{DATABASE_ID}"
